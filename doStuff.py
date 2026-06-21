@@ -52,7 +52,7 @@ def getFileDate(file) -> list[float|str]:
     logger.debug(f"*{sys._getframe().f_code.co_name}*: '{file}': {rawDate};  {formattedDate}")
     return [rawDate, formattedDate]
 
-def randomStringGen(length=12, alphabet=string.ascii_letters):
+def randomStringGen(length = 12, alphabet = string.ascii_letters):
     logger = setLogging(__name__)
     import random
     randomString = "".join(random.choice(alphabet) for _ in range(length))
@@ -80,7 +80,6 @@ def copyImages(config: dict, device: str):
         for brand in config["validImgFileExt"]:
             for imgFileExt in config["validImgFileExt"][brand]:
                 for pathToImage in list(Path(f"{device}:/").glob(f"**/*{imgFileExt}")):
-                    
                     logger.debug(f"*{sys._getframe().f_code.co_name}*: {pathToImage} -> {targetPath.joinpath(pathToImage.name)}")
                     shutil.copyfile(pathToImage, targetPath.joinpath(pathToImage.name))
                     print(f"copied '{pathToImage}' to '{targetPath.joinpath(pathToImage.name)}'")
