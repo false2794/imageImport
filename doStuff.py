@@ -73,7 +73,7 @@ def copyImages(config: dict, device: str):
                     logger.debug(f"*{sys._getframe().f_code.co_name}*: {pathToImage} -> {targetPath.joinpath(pathToImage.name)}")
                     shutil.copyfile(pathToImage, targetPath.joinpath(pathToImage.name))
                     print(f"copied '{pathToImage}' to '{targetPath.joinpath(pathToImage.name)}'")
-    elif config["scheme"] == "None":
+    elif config["scheme"] == "Insanity":
         subDir = randomStringGen()
         targetPath = Path(config["rootDir"]).joinpath(subDir)
         createDir(targetPath)
