@@ -97,7 +97,6 @@ def cleanUp(dir = "./logs"):
     for logFile in list(Path().cwd().joinpath(dir).glob(f"**/*.log")):
         fileDate = date.fromtimestamp(getFileDate(logFile)[0])
         fileSize = os.stat(logFile).st_size
-        print(f"{logFile}: {fileSize}")
         if today - fileDate >= delta2:
             if os.path.exists(logFile):
                 logger.debug(f"*{sys._getframe().f_code.co_name}*: deleted '{logFile}' after {today - fileDate} days with a filesize of {round(fileSize/1000, 2)} kb.")
