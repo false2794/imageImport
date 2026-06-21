@@ -8,11 +8,11 @@ Wir nutzen den Package Manager [pip](https://pip.pypa.io/en/stable/) zum install
 Netterweise habe ich eine *requirements.txt* bereitgestellt. Rechnung kommt per Mail.<br>
 Öffne die Kommandozeile dort, wo du die Dateien entpackt hast (*main.py sollte sich am selben Ort befinden*)
 ```bash
-pip install install requirements.txt
+pip install requirements.txt
 ```
 oder
 ```bash
-python -m pip install install requirements.txt
+python -m pip install requirements.txt
 ```
 
 ## Erster Anlauf
