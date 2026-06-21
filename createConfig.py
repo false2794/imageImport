@@ -9,7 +9,7 @@ def initiation() -> None:
     createDir(imageRootDirectory)
     optionsScheme = ["YYYY/MM/DD", "Insanity"]
     print(f"select your desired directory hierachy scheme for all future image imports:\n0: '{optionsScheme[0]}' (default)\n1: '{optionsScheme[1]}'")
-    hierarchyScheme = input(f"(enter '0' or '1' or leave blank for default): ").strip() or optionsScheme[0]
+    hierarchyScheme = optionsScheme[int(input(f"(enter '0' or '1' or leave blank for default): ").strip())] or optionsScheme[0]
     logger.debug(f"*{sys._getframe().f_code.co_name}*: {hierarchyScheme = }")
     config = {
         "rootDir": imageRootDirectory,
