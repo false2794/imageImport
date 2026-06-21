@@ -75,11 +75,12 @@ def copyImages(config: dict, device: str):
                     print(f"copied '{pathToImage}' to '{targetPath.joinpath(pathToImage.name)}'")
     elif config["scheme"] == "None":
         subDir = randomStringGen()
+        targetPath = Path(config["rootDir"]).joinpath(subDir)
         createDir(targetPath)
         for brand in config["validImgFileExt"]:
             for imgFileExt in config["validImgFileExt"][brand]:
                 for pathToImage in list(Path(f"{device}:/").glob(f"**/*{imgFileExt}")):
-                    targetPath = Path(config["rootDir"]).joinpath(subDir)
+                    
                     logger.debug(f"*{sys._getframe().f_code.co_name}*: {pathToImage} -> {targetPath.joinpath(pathToImage.name)}")
                     shutil.copyfile(pathToImage, targetPath.joinpath(pathToImage.name))
                     print(f"copied '{pathToImage}' to '{targetPath.joinpath(pathToImage.name)}'")
