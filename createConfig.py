@@ -4,7 +4,7 @@ from main import setLogging
 def initiation() -> None:
     logger = setLogging(__name__)
     from main import createDir
-    imageRootDirectory = input(f"please insert your desired directory root location for all future image imports: ")
+    imageRootDirectory = input(f"please insert your desired directory root location for all future image imports: ").strip
     logger.debug(f"*{sys._getframe().f_code.co_name}*: {imageRootDirectory = }")
     createDir(imageRootDirectory)
     optionsScheme = ["YYYY/MM/DD", "Insanity"]
