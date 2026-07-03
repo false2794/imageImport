@@ -2,7 +2,7 @@ import sys
 import logging
 import logging.config
 
-def createDir(dir):
+def createDir(dir) -> None:
     try:
         import os
         if not os.path.isdir(dir):
@@ -40,7 +40,7 @@ def loadToml() -> dict:
         logger = setLogging()
         logger.exception(f"Exception")
 
-def main():
+def main() -> None:
     logger = setLogging()
     import os.path
     if not os.path.isfile("./config/config.toml") or (len(sys.argv) >= 2 and sys.argv[1] == "init"):

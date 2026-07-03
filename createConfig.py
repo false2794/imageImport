@@ -29,7 +29,7 @@ def initiation() -> None:
 
     writeTOML(config)
 
-def writeTOML(dict):
+def writeTOML(dict) -> None:
     logger = setLogging(__name__)
     import tomli_w
     try:
