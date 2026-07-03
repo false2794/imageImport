@@ -65,7 +65,7 @@ def copyImages(config: dict, device: str) -> None:
     logger = setLogging(__name__)
     import shutil
     from main import createDir
-    if config["scheme"] == dateFormatISO8601:
+    if config["schema"] == dateFormatISO8601:
         for brand in config["validImgFileExt"]:
             for imgFileExt in config["validImgFileExt"][brand]:
                 for pathToImage in list(Path(f"{device}:/").glob(f"**/*{imgFileExt}")):
@@ -76,7 +76,7 @@ def copyImages(config: dict, device: str) -> None:
                         logger.debug(f"*{sys._getframe().f_code.co_name}*: {pathToImage} -> {targetPath.joinpath(pathToImage.name)}")
                         shutil.copyfile(pathToImage, targetPath.joinpath(pathToImage.name))
                         print(f"copied '{pathToImage}' to '{targetPath.joinpath(pathToImage.name)}'")
-    elif config["scheme"] == "Insanity":
+    elif config["schema"] == "Insanity":
         subDir = randomStringGen()
         targetPath = Path(config["rootDir"]).joinpath(subDir)
         createDir(targetPath)

@@ -7,13 +7,13 @@ def initiation() -> None:
     imageRootDirectory = input(f"please insert your desired directory root location for all future image imports: ").strip
     logger.debug(f"*{sys._getframe().f_code.co_name}*: {imageRootDirectory = }")
     createDir(imageRootDirectory)
-    optionsScheme = ["YYYY/MM/DD", "Insanity"]
-    print(f"select your desired directory hierachy scheme for all future image imports:\n0: '{optionsScheme[0]}' (default)\n1: '{optionsScheme[1]}'")
-    hierarchyScheme = optionsScheme[int(input(f"(enter '0' or '1' or leave blank for default): ").strip())] or optionsScheme[0]
-    logger.debug(f"*{sys._getframe().f_code.co_name}*: {hierarchyScheme = }")
+    optionsSchema = ["YYYY/MM/DD", "Insanity"]
+    print(f"select your desired directory hierachy schema for all future image imports:\n0: '{optionsSchema[0]}' (default)\n1: '{optionsSchema[1]}'")
+    hierarchySchema = optionsSchema[int(input(f"(enter '0' or '1' or leave blank for default): ").strip())] or optionsSchema[0]
+    logger.debug(f"*{sys._getframe().f_code.co_name}*: {hierarchySchema = }")
     config = {
         "rootDir": imageRootDirectory,
-        "scheme": hierarchyScheme,
+        "schema": hierarchySchema,
         "validImgFileExt": {
             "Adobe/Universal": [".dng"],
             "Canon": [".cr2", ".cr3", ".crw"],
